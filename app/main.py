@@ -5,7 +5,6 @@ import threading
 from fastapi import FastAPI
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
-import anthropic
 import google.generativeai as genai
 from .database import Base, engine, SessionLocal
 from dotenv import load_dotenv
