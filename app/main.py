@@ -2,6 +2,7 @@ import os
 import threading
 
 import google.generativeai as genai
+import uvicorn
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from slack_bolt import App
@@ -90,3 +91,7 @@ def start_socket_mode():
 
 slack_thread = threading.Thread(target=start_socket_mode, daemon=True)
 slack_thread.start()
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
