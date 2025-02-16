@@ -1,7 +1,6 @@
 import os
 import json
 import sqlite3
-import openai
 import threading
 from fastapi import FastAPI
 from slack_bolt import App
